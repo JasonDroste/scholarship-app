@@ -4,7 +4,9 @@
             <h2 class="font-semibold text-xl text-white leading-tight">
                 {{__('Articles')}}
             </h2>
+            @can('create articles')
             <a href="{{ route('articles.create') }}" class="bg-slate-700 text-sm rounded-md text-white px-3 py-3">Create</a>
+            @endcan
         </div>
     </x-slot>
 
@@ -31,8 +33,13 @@
                         <td class="px-6 py-3 text-left">{{ $article->author }}</td>
                         <td class="px-6 py-3 text-left">{{ \Carbon\Carbon::parse($article->created_at)->format('d M, Y') }}</td>
                         <td class="px-6 py-3 text-center">
+                            @can('edit articles')
                             <a href="{{ route("articles.edit", $article->id) }}" class="bg-slate-700 text-sm rounded-md text-white px-3 py-2 hover:bg-slate-600">Edit</a>
+                            @endcan
+                            
+                            @can('delete articles')
                             <a href="javascript:void(0);" onclick="deleteArticle({{ $article->id }})" class="bg-red-500 text-sm rounded-md text-white px-3 py-2 hover:bg-red-500">Delete</a>
+                            @endcan
                         </td>
                     </tr>
 
