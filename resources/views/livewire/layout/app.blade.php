@@ -13,6 +13,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -32,6 +33,7 @@
                 {{ $slot }}
             </main>
         </div>
+        @livewireScripts
     </body>
     <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
 

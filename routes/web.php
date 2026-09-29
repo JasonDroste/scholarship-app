@@ -1,10 +1,11 @@
 <?php
 
+//use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use App\Livewire\MultiStep;
+use App\Livewire\Application;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
@@ -16,10 +17,6 @@ Route::view('dashboard', 'dashboard')
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
-
-/*Route::view('permissions', 'permissions')
-    ->middleware(['auth'])
-    ->name('permissions');*/
 
     // Permissions routes
 Route::middleware('auth')->group(function () {
@@ -54,8 +51,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users', [UserController::class, 'destroy'])->name('users.destroy');
 
-    // MultiStep form
-    Route::get('/multi-step', MultiStep::class);
+    Route::get('/applications', Application::class)->name('applications.create');
+
 });
 
 require __DIR__.'/auth.php';

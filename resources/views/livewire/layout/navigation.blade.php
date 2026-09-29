@@ -35,21 +35,21 @@ new class extends Component
                     </x-nav-link>
                 </div>
 
-                @can('view permissions')
+                {{--@can('view permissions')--}}
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('permissions.index')" :active="request()->routeIs('permissions.index')" wire:navigate>
                         {{ __('Permissions') }}
                     </x-nav-link>
                 </div>
-                @endcan
+            {{--@endcan--}}
 
-                @can('view roles')
+                {{--@can('view roles')--}}
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('roles.index')" :active="request()->routeIs('roles.index')" wire:navigate>
                         {{ __('Roles') }}
                     </x-nav-link>
                 </div>
-                @endcan
+                {{--@endcan--}}
 
                 @can('view articles')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
@@ -59,13 +59,22 @@ new class extends Component
                 </div>
                 @endcan
 
-                @can('view users')
+                {{--@can('view users')--}}
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')" wire:navigate>
                         {{ __('Users') }}
                     </x-nav-link>
                 </div>
-                @endcan
+                {{--@endcan--}}
+
+                {{--@can('view users')--}}
+                {{--<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">--}}
+                    {{--<x-nav-link :href="route('applications.index')" :active="request()->routeIs('applications.index')" wire:navigate>
+                        {{ __('Applications') }}--}}
+                    {{--</x-nav-link>--}}
+                {{--</div>--}}
+                {{--@endcan--}}
+
             </div>
 
             <!-- Settings Dropdown -->

@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+//use Illuminate\Routing\Controllers\HasMiddleware;
+//use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class UserController extends Controller implements HasMiddleware
+class UserController extends Controller //implements HasMiddleware
 {
-    
+    /*
     public static function middleware(): array
     {
         return[
@@ -23,7 +23,7 @@ class UserController extends Controller implements HasMiddleware
         ];
 
     }  
-    
+    */
 /**
      * Display a listing of the resource.
      */
